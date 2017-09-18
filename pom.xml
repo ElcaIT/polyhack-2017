@@ -46,6 +46,7 @@
 
     <modules>
         <module>code</module>
+        <module>release</module>
     </modules>
 
     <dependencyManagement>
