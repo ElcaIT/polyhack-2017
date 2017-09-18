@@ -1,0 +1,6 @@
+application:
+  service:
+    backend:
+      title: 'Starter Application Backend API'
+      description: 'The Backend Service is a resource proxy and is the main access point for the single page app frontend'
+      version: @project.version@
