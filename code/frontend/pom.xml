@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <name>Hackathon Kickstarter Code Frontend</name>
+  <artifactId>frontend</artifactId>
+  <packaging>jar</packaging>
+
+  <parent>
+    <groupId>ch.elca.hackathon</groupId>
+    <artifactId>code</artifactId>
+    <version>1.0.0.0-SNAPSHOT</version>
+  </parent>
+
+  <properties>
+    <!-- build config -->
+    <npm.build.command>build</npm.build.command>
+
+    <!-- custom npm command, which is executed when calling frontend:npm from command-line-->
+    <custom.npm.command>start</custom.npm.command>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>ch.elca.hackathon</groupId>
+      <artifactId>backend</artifactId>
+      <type>ts</type>
+      <classifier>model</classifier>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>build</directory>
+        <targetPath>static</targetPath>
+      </resource>
+    </resources>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy-dependencies</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <includeTypes>ts</includeTypes>
+              <stripVersion>true</stripVersion>
+              <outputDirectory>${project.basedir}/src/app/generated</outputDirectory>
+              <overWriteReleases>true</overWriteReleases>
+              <overWriteSnapshots>true</overWriteSnapshots>
+              <overWriteIfNewer>true</overWriteIfNewer>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>resources</id>
+            <!-- Static resources for the JAR are only available after the npm build -->
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>resources</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>com.github.eirslett</groupId>
+        <artifactId>frontend-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>install-node-and-npm</id>
+            <goals>
+              <goal>install-node-and-npm</goal>
+            </goals>
+            <phase>generate-resources</phase>
+          </execution>
+          <execution>
+            <id>npm-install</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <configuration>
+              <arguments>install</arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <id>npm-build</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <phase>compile</phase>
+            <configuration>
+              <arguments>run ${npm.build.command}</arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <!-- default-cli is executed by default, if the goal is called from command-line-->
+            <id>default-cli</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <phase>none</phase>
+            <configuration>
+              <arguments>${custom.npm.command}</arguments>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clean-plugin</artifactId>
+        <configuration>
+          <filesets>
+            <fileset>
+              <directory>build</directory>
+              <directory>src/app/generated</directory>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
