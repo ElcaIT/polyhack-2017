@@ -1,12 +1,14 @@
 {
   "name": "elcathon-app",
   "homepage": ".",
+  "proxy": "http://localhost:8080/spring-starter",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-scripts-ts": "2.7.0"
+    "react-scripts-ts": "2.7.0",
+    "axios": "0.16.2"
   },
   "scripts": {
     "start": "react-scripts-ts start",
