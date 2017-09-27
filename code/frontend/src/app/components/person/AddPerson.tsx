@@ -1,4 +1,8 @@
 import * as React from 'react';
+import * as FormGroup from 'react-bootstrap/lib/FormGroup';
+import * as InputGroup from 'react-bootstrap/lib/InputGroup';
+import * as FormControl from 'react-bootstrap/lib/FormControl';
+import * as Button from 'react-bootstrap/lib/Button';
 
 interface PersonElementProperties {
     addPerson: (person: any) => void;
@@ -14,8 +18,8 @@ export class AddPerson extends React.Component<PersonElementProperties, any> {
         this.state = {name: ''};
     }
 
-    updateName(name: string) {
-        this.setState({name: name});
+    updateName(event: any) {
+        this.setState({name: event.target.value});
     }
 
     handleAddPersonClick(e) {
@@ -27,8 +31,14 @@ export class AddPerson extends React.Component<PersonElementProperties, any> {
     render() {
         return (
             <form>
-                <input onChange={(e) => this.updateName(e.target.value)} value={this.state.name}/>
-                <button onClick={(e) => this.handleAddPersonClick(e)}>Hinzufügen</button>
+                <FormGroup>
+                    <InputGroup>
+                        <FormControl onChange={e => this.updateName(e)} value={this.state.name} type="text" />
+                        <InputGroup.Button>
+                            <Button type="submit" onClick={e => this.handleAddPersonClick(e)}>Hinzufügen</Button>
+                        </InputGroup.Button>
+                    </InputGroup>
+                </FormGroup>
             </form>
         );
     }

@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import {PersonList} from './app/components/person/PersonList';
 import {AddPerson} from './app/components/person/AddPerson';
+import * as PageHeader from 'react-bootstrap/lib/PageHeader';
 // import {RouteComponentProps} from 'react-router';
 
 class App extends React.Component<any, any> {
@@ -35,7 +36,8 @@ class App extends React.Component<any, any> {
 
     render() {
         return (
-            <div>
+            <div className="container">
+                <PageHeader>Person List <small>Add person and see details</small></PageHeader>
                 <AddPerson addPerson={(person) => this.addPerson(person)}/>
                 <PersonList persons={this.state.persons}/>
             </div>
