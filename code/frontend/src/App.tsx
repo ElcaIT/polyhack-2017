@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import {PersonList} from './app/components/person/PersonList';
 import {AddPerson} from './app/components/person/AddPerson';
+// import {RouteComponentProps} from 'react-router';
 
 class App extends React.Component<any, any> {
 
@@ -29,8 +30,6 @@ class App extends React.Component<any, any> {
             this.setState(prevState => ({
                 persons: [...prevState.persons, response.data]
             }));
-        }).catch(function (error: any) {
-            console.log(error);
         });
     }
 
