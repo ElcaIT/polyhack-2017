@@ -37,6 +37,8 @@
 
         <!-- dependency versions -->
         <version.springfox>2.7.0</version.springfox>
+        <version.commons-io>2.5</version.commons-io>
+        <version.rest-assured>2.8.0</version.rest-assured>
 
         <!-- plugin versions -->
         <version.maven-compiler-plugin>3.5.1</version.maven-compiler-plugin>
@@ -69,6 +71,19 @@
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${version.springfox}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${version.commons-io}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.jayway.restassured</groupId>
+                <artifactId>rest-assured</artifactId>
+                <version>${version.rest-assured}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
