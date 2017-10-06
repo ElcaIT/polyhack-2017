@@ -4,21 +4,18 @@ import * as InputGroup from 'react-bootstrap/lib/InputGroup';
 import * as FormControl from 'react-bootstrap/lib/FormControl';
 import * as Button from 'react-bootstrap/lib/Button';
 
-interface PersonElementProperties {
-    addPerson: (person: any) => void;
-}
 
 /**
  * Render a Person
  */
-export class AddPerson extends React.Component<PersonElementProperties, any> {
+export class AddPerson extends React.Component {
 
     constructor(props, context) {
         super(props, context);
         this.state = {name: ''};
     }
 
-    updateName(event: any) {
+    updateName(event) {
         this.setState({name: event.target.value});
     }
 

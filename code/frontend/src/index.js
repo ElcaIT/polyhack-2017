@@ -15,6 +15,6 @@ ReactDOM.render(
             <Route path="/persons/:personId" component={PersonDetail}/>
         </div>
     </HashRouter>,
-    document.getElementById('root') as HTMLElement
+    document.getElementById('root')
 );
 registerServiceWorker();

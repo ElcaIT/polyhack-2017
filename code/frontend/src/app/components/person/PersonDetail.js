@@ -6,7 +6,7 @@ import * as Jumbotron from 'react-bootstrap/lib/Jumbotron';
 /**
  * Render a Person in Detail View
  */
-export class PersonDetail extends React.Component<any, any> {
+export class PersonDetail extends React.Component {
 
     constructor(props, context) {
         super(props, context);

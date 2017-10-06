@@ -6,7 +6,7 @@ import {AddPerson} from './app/components/person/AddPerson';
 import * as PageHeader from 'react-bootstrap/lib/PageHeader';
 // import {RouteComponentProps} from 'react-router';
 
-class App extends React.Component<any, any> {
+class App extends React.Component {
 
     constructor(props, context) {
         super(props, context);
