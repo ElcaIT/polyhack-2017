@@ -18,6 +18,10 @@
             <groupId>ch.elca.hackathon</groupId>
             <artifactId>backend</artifactId>
         </dependency>
+        <dependency>
+            <groupId>ch.elca.hackathon</groupId>
+            <artifactId>frontend</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
