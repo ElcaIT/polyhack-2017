@@ -2,6 +2,14 @@
 
 This is a collection of potential usefull links about topics mentioned in the workshops:
 
+## Spring Boot
+
+* **Spring Boot Reference Guide** - Make sure to start here: [https://docs.spring.io/spring-boot/docs/1.5.4.RELEASE/reference/htmlsingle/](https://docs.spring.io/spring-boot/docs/1.5.4.RELEASE/reference/htmlsingle/)
+* **Spring Initializr** - Spring Boot application bootstrapping: [https://start.spring.io/](https://start.spring.io/)
+* **Spring REST Guide** - [https://spring.io/guides/gs/rest-service/](https://spring.io/guides/gs/rest-service/)
+* **Spring Data JPA Guide** - [https://spring.io/guides/gs/accessing-data-rest/](https://spring.io/guides/gs/accessing-data-rest/)
+* **Spring Data** - [https://docs.spring.io/spring-data/jpa/docs/1.11.4.RELEASE/reference/html/](https://docs.spring.io/spring-data/jpa/docs/1.11.4.RELEASE/reference/html/)
+
 ## React
 
 ### Plain React
@@ -19,3 +27,8 @@ This is a collection of potential usefull links about topics mentioned in the wo
 * **Links to various React topics** - [https://github.com/markerikson/react-redux-links](https://github.com/markerikson/react-redux-links)
 * **Libraries around React** - [https://www.robinwieruch.de/essential-react-libraries-framework](https://www.robinwieruch.de/essential-react-libraries-framework)
   
+## Maven
+
+* **Maven in 5 Minutes** - [https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)
+* **Maven Getting Started** - [https://maven.apache.org/guides/getting-started/index.html](https://maven.apache.org/guides/getting-started/index.html)
+* **Maven POM Reference** - [https://maven.apache.org/pom.html](https://maven.apache.org/pom.html)
