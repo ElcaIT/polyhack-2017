@@ -90,56 +90,6 @@
                 <filtering>false</filtering>
             </resource>
         </resources>
-        <plugins>
-            <plugin>
-                <groupId>cz.habarta.typescript-generator</groupId>
-                <artifactId>typescript-generator-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>generate-error-classes</id>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <phase>process-classes</phase>
-                        <configuration>
-                            <!-- VndErrors uses JAXB-Annotations. -->
-                            <jsonLibrary>jaxb</jsonLibrary>
-                            <classPatterns>
-                                <pattern>ch.elca.hackathon.impl.model.*</pattern>
-                            </classPatterns>
-                            <mapEnum>asEnum</mapEnum>
-                            <nonConstEnums>true</nonConstEnums>
-                            <stringQuotes>singleQuotes</stringQuotes>
-                            <outputFile>${project.build.directory}/generated-typescript-sources/model.ts</outputFile>
-                            <outputKind>module</outputKind>
-                            <outputFileType>implementationFile</outputFileType>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>build-helper-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>attach-configuration</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>attach-artifact</goal>
-                        </goals>
-                        <configuration>
-                            <artifacts>
-                                <artifact>
-                                    <file>${project.build.directory}/generated-typescript-sources/model.ts</file>
-                                    <type>ts</type>
-                                    <classifier>model</classifier>
-                                </artifact>
-                            </artifacts>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
     </build>
 
 </project>

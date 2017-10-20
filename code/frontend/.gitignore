@@ -1,8 +1,5 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
-# generated content
-/src/app/generated
-
 # dependencies
 /node_modules
 /node

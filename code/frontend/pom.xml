@@ -21,15 +21,6 @@
     <custom.npm.command>start</custom.npm.command>
   </properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>ch.elca.hackathon</groupId>
-      <artifactId>backend</artifactId>
-      <type>ts</type>
-      <classifier>model</classifier>
-    </dependency>
-  </dependencies>
-
   <build>
     <resources>
       <resource>
@@ -39,27 +30,6 @@
     </resources>
 
     <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>copy-dependencies</id>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>copy-dependencies</goal>
-            </goals>
-            <configuration>
-              <includeTypes>ts</includeTypes>
-              <stripVersion>true</stripVersion>
-              <outputDirectory>${project.basedir}/src/app/generated</outputDirectory>
-              <overWriteReleases>true</overWriteReleases>
-              <overWriteSnapshots>true</overWriteSnapshots>
-              <overWriteIfNewer>true</overWriteIfNewer>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
@@ -124,7 +94,6 @@
           <filesets>
             <fileset>
               <directory>build</directory>
-              <directory>src/app/generated</directory>
             </fileset>
           </filesets>
         </configuration>
