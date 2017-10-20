@@ -131,3 +131,6 @@ Follow the instructions on these pages. *NVM* allows you to also manage differen
 
 ### Backend and frontend
 If you'd like you can clone and reuse this project and adapt it to your needs (throw away non-needed domain classes / modify the frontend / etc). Of course you can also only use this project as a reference or not at all.
+
+## Additional resources
+Please check the [LINKS.md](LINKS.md) file for additional resources.
