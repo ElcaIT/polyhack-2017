@@ -100,7 +100,7 @@ The service can be started on the command line by issuing the following command 
 #### General
 For executing the *React* application the environment provides an (*webpack*) development server which is reachable under [http://localhost:3000/](http://localhost:3000/). The *React* application is based on the [Create React App Starter](https://github.com/facebookincubator/create-react-app). The server will watch the files under `code/frontend/src` and automatically recompile if something changes.
 
-For development the connection to the backend server the development server contains a proxy, which is configured to redirect calls to `/api/*` to the *Spring Boot Application*. Note that this is configured in `package.json` which is automatically used when using `npm start`. More information can be found [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#proxying-api-requests-in-development)
+For development the connection to the backend server the development server contains a proxy, which is configured to redirect calls to `/api/*` to the *Spring Boot Application*. Note that this is configured in `package.json` which is automatically used when using `npm start`. More information can be found [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#proxying-api-requests-in-development).
 
 #### IDE / Command Line
 The development server can be started using npm by executing the following command in the `code/frontend` directory:
@@ -120,12 +120,12 @@ The development server can be started using maven (and thus Node and npm provide
 ### Frontend Only
 If you'd like to start with a frontend only application you have two options which are quite similar:
  1. Copy out all the code from `code/frontend`
- 1. Follow the instructions on[Create React App](https://github.com/facebookincubator/create-react-app)
+ 1. Follow the instructions on [Create React App](https://github.com/facebookincubator/create-react-app)
  
 In both cases you need to have *NodeJS* installed on your machine. A good way to install *NodeJS* on your machine is:
 
 - Unix: [NVM](https://github.com/creationix/nvm)
-- Windows:[NVM for Windows](https://github.com/coreybutler/nvm-windows)
+- Windows: [NVM for Windows](https://github.com/coreybutler/nvm-windows)
 
 Follow the instructions on these pages. *NVM* allows you to also manage different version of *NodeJS* on you machine.
 
