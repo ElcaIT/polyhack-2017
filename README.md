@@ -21,7 +21,6 @@ A set of utility methods is provided in the `etc/shell/additional_bash_profile.s
 ### Development tools
 Any development tool - *IntelliJ*, *Eclipse*, *Visual Studio Code*... - can be used with the project. For *IntelliJ* the frontend development is strongly recommended. The following plugins should be installed to support the development:
 
-* ReactJS
 * NodeJS
 
 Additionally, as we use [Lombok](https://projectlombok.org/)(an annotation processor generating boilerplate getters/setters/... for classes) please install the [Lombok plugin](https://plugins.jetbrains.com/plugin/6317-lombok-plugin) for IntelliJ or simply get rid ofall **Lombok** annotations and replace them with the equivalent cocde.
